@@ -92,6 +92,8 @@ class Mysql2psql
         "text"
       when "text"
         "text"
+      when "geometry"
+        "geometry"
       when /^enum/
         default = default + "::character varying" if default
         enum = column[:type].gsub(/enum|\(|\)/, '')
